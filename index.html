@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Water Business Tirupur</title>
+
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: #fff;
+    color: #000;
+  }
+
+  /* Header */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo {
+    border-radius: 50%;
+    height: 50px;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 40px;
+
+  }
+
+  nav a {
+    text-decoration: none;
+    color: grey;
+    position: relative;
+  }
+
+  nav a:hover {
+    color: black;
+  }
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    background: url('/html/newimage.jpeg') no-repeat center center/cover;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+    margin-top: 90px; /* Prevent content from hiding under header */
+  }
+
+  .hero h1 {
+    font-weight: 600;
+    font-size: 2rem;
+    max-width: 80%;
+  }
+
+  .btn-view-products {
+    margin-top: 18px;
+    border: 2px solid white;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: white;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .btn-view-products:hover {
+    background-color: white;
+    color: #000080;
+  }
+
+  /* Info Section */
+  .info-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .info-left, .info-right {
+    box-sizing: border-box;
+    flex: 1 1 50%;
+    padding: 40px;
+    color: white;
+  }
+
+  .info-left {
+    background: grey;
+  }
+
+  .info-left h2 {
+    font-weight: 800;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  .info-left hr {
+    width: 40px;
+    border: 2px solid black;
+    margin: 0 0 28px 0;
+  }
+
+  .info-left p {
+    font-size: 1rem;
+    color: #e6e6e6;
+    max-width: 420px;
+    line-height: 1.4;
+  }
+
+  .info-right {
+    background: black;
+  }
+
+  .info-right h2 {
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+
+  .info-right hr {
+    width: 40px;
+    border: 2px solid white;
+    margin: 6px 0 24px 0;
+  }
+
+  .info-right p {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    max-width: 400px;
+  }
+
+  /* Products Section */
+  #Products {
+    padding: 60px 30px;
+    background: white;
+  }
+
+  #Products h1 {
+    margin-bottom: 20px;
+  }
+
+  .services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding-bottom: 20px;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  }
+
+  .service-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid #eee;
+  }
+
+  .service-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 15px 0 10px;
+    color: #333;
+  }
+
+  .service-desc {
+    font-size: 0.95rem;
+    color: black;
+    padding: 0 15px;
+    line-height: 1.5;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+
+  .footer-section {
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .footer-section h4 {
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 8px;
+  }
+
+  .footer-section ul li a {
+    color: #ddd;
+    text-decoration: none;
+  }
+
+  .footer-section ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-logo img {
+    max-width: 180px;
+    margin-bottom: 20px;
+  }
+
+  .footer-contact a {
+    color: #ddd;
+    text-decoration: underline;
+  }
+
+  .bottom-bar {
+    background-color: grey;
+    color: white;
+    font-size: 12px;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .info-container {
+      flex-direction: column;
+    }
+    .info-left, .info-right {
+      flex: 1 1 100%;
+      padding: 30px 20px;
+    }
+    nav {
+      gap: 12px;
+      font-size: 13px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+  <div>
+    <img src="/html/companylogo.jpeg" alt="Company Logo" class="logo" />
+  </div>
+  <nav aria-label="Primary Navigation">
+    <a href="water.html">Home</a>
+    <a href="#Products">Products</a>
+    <a href="#Aboutus">About Us</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" role="banner">
+  <h1>High Quality Water Purification</h1>
+  <button class="btn-view-products" aria-label="View Products">VIEW PRODUCTS</button>
+</section>
+
+<!-- Info Section -->
+<section class="info-container" aria-label="Information sections">
+  <div class="info-left">
+    <h2>We are the leading manufacturer of commercial and industrial purification water</h2>
+    <hr />
+    <p>
+      Water Business Tirupur is a premier manufacturer & distributor of high-quality purified water.
+      A gentle stream flowed nearby, its ripples catching the golden rays of dawn.
+    </p>
+  </div>
+  <div class="info-right">
+    <h2>Manufactured In Tirupur</h2>
+    <hr />
+    <p>Ensuring high quality, reliability, and durability using advanced technical equipment.</p>
+  </div>
+</section>
+
+<!-- Products Section -->
+<section id="Products">
+  <h1>Products</h1>
+  <div class="services-container">
+    <div class="service-card">
+      <img src="/html/logo.jpeg" alt="300ml Water Bottle" class="service-img" />
+      <h3 class="service-title">300ml Water</h3>
+      <p class="service-desc">Enjoy fresh and clean water — she poured a glass to cool down.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="/html/logo.jpeg" alt="500ml Water Bottle" class="service-img" />
+      <h3 class="service-title">500ml Water</h3>
+      <p class="service-desc">The river flows gently through the valley — book now, it’s wow!</p>
+    </div>
+
+    <div class="service-card">
+      <img src="/html/logo.jpeg" alt="1 Litre Water Bottle" class="service-img" />
+      <h3 class="service-title">1 Litre Water</h3>
+      <p class="service-desc">The ocean waves crashed against the rocks — pure, refreshing hydration.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="Aboutus">
+  <div class="footer-section footer-logo">
+    <img src="/html/companylogo.jpeg" alt="Company Logo" />
+    <p><strong>DRINKING WATER</strong></p>
+  </div>
+
+  <div class="footer-section">
+    <h4>Quick Links</h4>
+    <ul>
+      <li><a href="water.html">► Home</a></li>
+      <li><a href="#Products">► Products</a></li>
+      <li><a href="#Aboutus">► About Us</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-section footer-contact">
+    <h4>Contact Info</h4>
+    <p><strong>Corporate Marketing Office:</strong><br />
+       3/534-A Guruvayurappan Nagar, Vavipalayam,<br />
+       Tiruppur - 641666, India.</p>
+    <p><strong>Registered Office:</strong><br />
+       “TEAM House”, Vavipalayam, Tirupur – 638660.</p>
+  </div>
+
+  <div class="footer-section footer-contact">
+    <h4>Quick Contact</h4>
+    <p><strong>Phone:</strong><br />9787980228</p>
+    <p><strong>Email:</strong><br />
+      <a href="mailto:meridiangroupoftrades@gmail.com">meridiangroupoftrades@gmail.com</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Bottom Bar -->
+<div class="bottom-bar">
+  © 2025 Meridian TEAM PRIVATE LIMITED. All Rights Reserved | Meridian Group of Trades
+</div>
+
+</body>
+</html>
